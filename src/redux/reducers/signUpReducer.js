@@ -8,7 +8,6 @@ const initialState = {
 const signUpReducer = createReducer(initialState, (builder) => {
   builder
     .addCase(signUpAction, (state, action) => {
-      console.log(state, action)
       state.username = action.payload;
   })
     // .addCase(action, (state, action) => {...callback...});

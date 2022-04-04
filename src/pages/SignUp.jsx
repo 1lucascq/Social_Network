@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import { signUpAction } from '../actions';
 import Buttons from '../components/Buttons';
-import Input from '../components/Input';
+import Inputs from '../components/Inputs';
 
 function SignUp() {
   const [username, setUsername] = useState('');
@@ -11,7 +11,6 @@ function SignUp() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   
-  console.log(navigate)
   useEffect(() => {
     if (username) {
       setDisabled(false)
@@ -29,7 +28,7 @@ function SignUp() {
   return (
     <div className="App">
       {`signup, ${username}`}
-      <Input name="username" text="Please enter your username" value={username} handleFunction={setUsername} />
+      <Inputs name="username" text="Please enter your username" value={username} handleFunction={setUsername} />
       <Buttons disabled={disabled} text="Enter" handleFunction={handleButton}/>
     </div>
   );
