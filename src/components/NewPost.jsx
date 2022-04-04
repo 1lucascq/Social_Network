@@ -19,6 +19,8 @@ export default function NewPost() {
 
   const handleButton = (e) => {
     e.preventDefault();
+    // TODO: colocar a logica de que um novo post deve ser acionado através da action o formato definido la no reducer
+    // ver formar
   };
 
   return (

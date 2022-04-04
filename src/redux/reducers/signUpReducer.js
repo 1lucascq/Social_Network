@@ -12,8 +12,6 @@ const signUpReducer = createReducer(initialState, (builder) => {
       state.username = action.payload.username;
       state.id = action.payload.id;
   });
-    // .addCase(action, (state, action) => {...callback...});
-    // or builder..addCase(action, (state, action) => {...callback...});
 });
 
 export default signUpReducer;
