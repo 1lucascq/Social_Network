@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { signupAction } from "../../actions";
+import { signUpAction } from "../../actions";
 
 const initialState = {
   username: "",
@@ -7,7 +7,7 @@ const initialState = {
 
 const signUpReducer = createReducer(initialState, (builder) => {
   builder
-    .addCase(signupAction, (state, action) => {
+    .addCase(signUpAction, (state, action) => {
     state.username = action.payload;
   })
     // .addCase(action, (state, action) => {...callback...});
