@@ -1,3 +1,3 @@
 import { createAction } from '@reduxjs/toolkit'
 
-export const signUpAction = createAction('login')
+export const signUpAction = createAction('signUp')

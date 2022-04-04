@@ -6,7 +6,7 @@ export default function Buttons({disabled, text, handleFunction}) {
     <button
       disabled={ disabled }
       type="button"
-      onClick={ handleFunction !== null && handleFunction }
+      onClick={ (e) => handleFunction(e)}
     >
       {text}
     </button>
@@ -15,6 +15,6 @@ export default function Buttons({disabled, text, handleFunction}) {
 
 Buttons.propTypes = {
   disabled: PropTypes.bool.isRequired,
+  text: PropTypes.string.isRequired,
   handleFunction: PropTypes.func.isRequired,
-  text: PropTypes.string.isRequired
 }
