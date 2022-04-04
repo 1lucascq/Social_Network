@@ -11,7 +11,6 @@ function SignUp() {
   const [disabled, setDisabled] = useState(true);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  
   useEffect(() => {
     if (username) {
       setDisabled(false)
@@ -20,8 +19,7 @@ function SignUp() {
     }
   }, [username])
 
-  const handleButton = (e) => {
-    e.preventDefault();
+  const handleButton = () => {
     dispatch(signUpAction({
       username,
       id: uuidv4()

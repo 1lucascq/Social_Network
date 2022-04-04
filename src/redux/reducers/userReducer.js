@@ -6,7 +6,7 @@ const initialState = {
   id: ''
 };
 
-const signUpReducer = createReducer(initialState, (builder) => {
+const userReducer = createReducer(initialState, (builder) => {
   builder
     .addCase(signUpAction, (state, action) => {
       state.username = action.payload.username;
@@ -14,4 +14,4 @@ const signUpReducer = createReducer(initialState, (builder) => {
   });
 });
 
-export default signUpReducer;
+export default userReducer;
