@@ -6,7 +6,7 @@ function SignUp() {
 
   return (
     <div className="App">
-      {`bla, ${username}`}
+      {`signup, ${username}`}
     </div>
   );
 }

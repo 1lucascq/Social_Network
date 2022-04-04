@@ -1,14 +1,14 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 
-function SignUp() {
-  const dispatch = useDispatch();
+function Main() {
+  // const dispatch = useDispatch();
 
   return (
-    <div className="App">
-      bla
+    <div className="main">
+      main
     </div>
   );
 }
 
-export default SignUp;
+export default Main;
