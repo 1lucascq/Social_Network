@@ -1,6 +1,7 @@
 import React from 'react';
-import Header from '../components/Header';
-import NewPost from '../components/NewPost';
+import Header from '../components/general/Header';
+import NewPost from '../components/posts/NewPost';
+import PostSection from '../components/posts/PostsSection';
 // import { useDispatch } from 'react-redux';
 
 function Main() {
@@ -10,6 +11,7 @@ function Main() {
     <>
       <Header />
       <NewPost />
+      <PostSection />
     </>
   );
 }

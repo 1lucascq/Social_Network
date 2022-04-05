@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import Inputs from './Inputs'
-import TextAreas from './TextAreas';
-import Buttons from '../components/Buttons';
+import Inputs from '../general/Inputs'
+import TextAreas from '../general/TextAreas';
+import Buttons from '../general/Buttons';
 import { useDispatch, useSelector } from 'react-redux';
-import { newPostAction, signUpAction } from '../actions';
+import { newPostAction, signUpAction } from '../../actions';
 
 
 export default function NewPost() {
@@ -33,7 +33,7 @@ export default function NewPost() {
       post: {
         title,
         content,
-        postedAt: new Date().toJSON(),
+        postedAt: new Date(),
       },
     }));
     // // TODO: colocar a logica de que um novo post deve ser acionado através da action o formato definido la no reducer

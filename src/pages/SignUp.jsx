@@ -3,8 +3,8 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
 import { signUpAction } from '../actions';
-import Buttons from '../components/Buttons';
-import Inputs from '../components/Inputs';
+import Buttons from '../components/general/Buttons';
+import Inputs from '../components/general/Inputs';
 
 function SignUp() {
   const [username, setUsername] = useState('');
