@@ -1,8 +1,20 @@
 import { createReducer } from "@reduxjs/toolkit";
 import { newPostAction } from "../../actions";
 
-const initialState = []
-// O post deve ter a estrutura citada acima;
+const initialState = [
+      {
+    user: {
+      username: 'bj',
+      id: '007'
+    },
+    post: {
+      title: 'My name is',
+      content: 'Bond, James Bond',
+      postedAt: new Date('6/5/21')
+    },
+  }
+]
+
 const postsReducer = createReducer(initialState, (builder) => {
   builder
     .addCase(newPostAction, (state, action) => {
@@ -13,18 +25,3 @@ const postsReducer = createReducer(initialState, (builder) => {
 });
 
 export default postsReducer;
-
-//  Post format:
-//     {
-//     user: {
-//       username: '',
-//       id: ''
-//     },
-//     post: {
-//       title: '',
-//       content: '',
-//       postedAt: ''
-//     },
-//   }
-
-
