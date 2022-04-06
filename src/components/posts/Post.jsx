@@ -6,7 +6,7 @@ import { getElapsedTime } from "../../helpers/getElapsedTime";
 export default function Post({ title, user, postedAt, content }) {
   const elapsedTime = getElapsedTime(postedAt);
   return (
-    <Container>
+    <Container sx={{ my: '3em' }}>
 
       <Card>
         <CardHeader
@@ -36,7 +36,6 @@ export default function Post({ title, user, postedAt, content }) {
 
       </Card>
     </Container>
-
   );
 }
 

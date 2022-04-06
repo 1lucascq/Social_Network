@@ -1,23 +1,23 @@
-import { TextField } from "@mui/material";
+import { TextField } from "@mui/material"
 import PropTypes from "prop-types"
-import React from "react";
+import React from 'react'
 
-export default function Inputs({name, label, value, handleFunction}) {
+export default function LargeInput({name, label, value, handleFunction}) {
   return (
     <TextField
-      id="outlined-basic"
-      variant="outlined"
-      type="text"
+      id="outlined-multiline-static"
       label={label}
       name={name}
+      multiline
+      rows={4}
       defaultValue={value}
       onChange={(e) => handleFunction(e.target.value)}
-      required
-   />
-  );
+      sx={{ my: '1em' }}
+    />  
+  )
 }
 
-Inputs.propTypes = {
+LargeInput.propTypes = {
   handleFunction: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
