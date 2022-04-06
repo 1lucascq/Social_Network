@@ -12,14 +12,6 @@ export default function Buttons({ disabled, text, handleFunction }) {
     >
       {text}
     </Button>
-
-    // <button
-    //   disabled={ disabled }
-    //   type="button"
-    //   onClick={ (e) => handleFunction(e)}
-    // >
-    //   {text}
-    // </button>
   );
 }
 

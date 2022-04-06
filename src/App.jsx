@@ -9,6 +9,10 @@ import { createTheme, CssBaseline } from "@mui/material";
 function App() {
   const theme = createTheme({
     palette: {
+      primary: {
+        main: "#111111",
+        light: "#777777"
+      },
       background: {
         default: "#DDDDDD"
       }
@@ -23,6 +27,7 @@ function App() {
         <Route index element={<SignUp />} />
         <Route path="/main" element={<Main />} />
       </Routes>
+
     </ThemeProvider>
   );
 }

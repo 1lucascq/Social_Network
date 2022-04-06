@@ -5,7 +5,6 @@ import Post from './Post'
 
 export default function PostSection() {
   const { payload } = useSelector(newPostAction);
-  // console.log(payload)
   return (
     <>
       {payload.posts.map(({ post, user }) => {
@@ -13,7 +12,7 @@ export default function PostSection() {
           <Post 
           key={user.id}
           title={post.title}
-          user={user.username}
+          user={`@${user.username}`}
           postedAt={post.postedAt}
           content={post.content}
           />

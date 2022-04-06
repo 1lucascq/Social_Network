@@ -1,9 +1,14 @@
+import { AppBar, Toolbar, Typography } from '@mui/material'
 import React from 'react'
 
 export default function Header() {
   return (
-    <header>
-      <h3>CodeLeap Network</h3>
-    </header>
+    <AppBar position='static'>
+      <Toolbar>
+        <Typography variant='h6'>
+          CodeLeap Network
+        </Typography>
+      </Toolbar>
+    </AppBar>
   )
 }

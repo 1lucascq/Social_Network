@@ -14,17 +14,6 @@ export default function Inputs({name, label, value, handleFunction}) {
     onChange={(e) => handleFunction(e.target.value)}
     required
   />
-    
-  //   <label htmlFor={name}>
-  //     {label}:
-  //     <input
-  //       id={name}
-  //       type="text"
-  //       name={name}
-  //       value={value}
-  //       onChange={(e) => handleFunction(e.target.value)}
-  //     />
-  //   </label>
   );
 }
 
