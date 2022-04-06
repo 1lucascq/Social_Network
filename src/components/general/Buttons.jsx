@@ -1,15 +1,25 @@
-import PropTypes from "prop-types"
-import React from 'react'
+import { Button } from "@mui/material";
+import PropTypes from "prop-types";
+import React from "react";
 
-export default function Buttons({disabled, text, handleFunction}) {
+export default function Buttons({ disabled, text, handleFunction }) {
   return (
-    <button
-      disabled={ disabled }
-      type="button"
-      onClick={ (e) => handleFunction(e)}
+    <Button
+      variant="contained"
+      disabled={disabled}
+      sx={{ width:'7em', height:'1em',  padding:'1.5em', alignSelf: 'flex-end' }}
+      onClick={(e) => handleFunction(e)}
     >
       {text}
-    </button>
+    </Button>
+
+    // <button
+    //   disabled={ disabled }
+    //   type="button"
+    //   onClick={ (e) => handleFunction(e)}
+    // >
+    //   {text}
+    // </button>
   );
 }
 
@@ -17,4 +27,4 @@ Buttons.propTypes = {
   disabled: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired,
   handleFunction: PropTypes.func.isRequired,
-}
+};
