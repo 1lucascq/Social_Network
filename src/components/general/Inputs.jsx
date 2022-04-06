@@ -10,7 +10,7 @@ export default function Inputs({name, label, value, handleFunction}) {
       type="text"
       label={label}
       name={name}
-      defaultValue={value}
+      value={value}
       onChange={(e) => handleFunction(e.target.value)}
       required
    />

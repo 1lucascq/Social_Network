@@ -10,7 +10,7 @@ export default function LargeInput({name, label, value, handleFunction}) {
       name={name}
       multiline
       rows={4}
-      defaultValue={value}
+      value={value}
       onChange={(e) => handleFunction(e.target.value)}
       sx={{ my: '1em' }}
     />  

@@ -40,6 +40,8 @@ export default function NewPost() {
         },
       })
     );
+    setTitle('');
+    setContent('');
   };
 
   return (
@@ -53,7 +55,6 @@ export default function NewPost() {
           }
         />
 
-        {/* <Inputs name="title" label="Title" value={title} handleFunction={setTitle} /> */}
         <FormControl 
           fullWidth
           margin='normal'
@@ -82,13 +83,3 @@ export default function NewPost() {
     </Container>
   );
 }
-
-// <>
-// <h5>What's on your mind?</h5>
-// <form>
-//   <Inputs name="title" text="Title" value={title} handleFunction={setTitle} />
-//   <TextAreas name="content" text="Content" value={content} handleFunction={setContent} />
-//   <Buttons disabled={disabled} text="Enter" handleFunction={handleButton}/>
-// </form>
-
-// </>
