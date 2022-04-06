@@ -36,7 +36,7 @@ export default function NewPost() {
         post: {
           title,
           content,
-          postedAt: new Date(),
+          postedAt: new Date().getTime(),
         },
       })
     );

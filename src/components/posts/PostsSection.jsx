@@ -7,10 +7,10 @@ export default function PostSection() {
   const { payload } = useSelector(newPostAction);
   return (
     <>
-      {payload.posts.map(({ post, user }) => {
+      {payload.posts.map(({ post, user }, i) => {
         return (
           <Post 
-          key={user.id}
+          key={user.id + i}
           title={post.title}
           user={`@${user.username}`}
           postedAt={post.postedAt}

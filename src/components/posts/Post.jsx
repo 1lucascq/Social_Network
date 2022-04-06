@@ -41,7 +41,7 @@ export default function Post({ title, user, postedAt, content }) {
 
 Post.propTypes = {
   title: PropTypes.string.isRequired,
-  postedAt: PropTypes.object.isRequired,
+  postedAt: PropTypes.number.isRequired,
   content: PropTypes.string.isRequired,
   user: PropTypes.string.isRequired,
 };
