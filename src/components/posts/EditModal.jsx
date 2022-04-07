@@ -4,8 +4,8 @@ import {
 } from "@mui/material";
 import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { editPostAction, signUpAction } from "../../actions";
+import { useDispatch } from "react-redux";
+import { editPostAction } from "../../actions";
 import Buttons from "../general/Buttons";
 import Inputs from "../general/Inputs";
 import LargeInputs from "../general/LargeInputs";
@@ -15,7 +15,6 @@ export default function EditModal({postData}) {
   const [content, setContent] = useState(postData.content);
   const [disabled, setDisabled] = useState(true);
   const dispatch = useDispatch();
-  const { payload } = useSelector(signUpAction);
   
   useEffect(() => {
     if (title && content) {
@@ -24,10 +23,6 @@ export default function EditModal({postData}) {
       setDisabled(true);
     }
   }, [title, content]);
-
-  // console.log(postData)
-  console.log(payload.posts)
-  // console.log('esse post é: ', payload.posts.find(({post}) => post.postedAt === postData.postedAt))
 
   const handleButton = () => {
     dispatch(

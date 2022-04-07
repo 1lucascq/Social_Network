@@ -1,4 +1,4 @@
-import { createReducer, current } from "@reduxjs/toolkit";
+import { createReducer } from "@reduxjs/toolkit";
 import { deletePostAction, editPostAction, newPostAction } from "../../actions";
 
 const initialState = [
@@ -14,7 +14,6 @@ const initialState = [
     },
   },
 ];
-console.log(editPostAction);
 const postsReducer = createReducer(initialState, (builder) => {
   builder
     .addCase(newPostAction, (state, action) => {
@@ -30,12 +29,9 @@ const postsReducer = createReducer(initialState, (builder) => {
       });
     })
     .addCase(deletePostAction, (state, {payload}) => {
-      console.log('state no reducer :::::::::::::::', current(state));
-      console.log('state no reducer :::::::::::::::', current(state).filter(({ post }) => post.postedAt !== payload.postedAt));
       state = state.filter(({ post }) => post.postedAt !== payload.postedAt)
       return state;
     })
-  // or builder..addCase(action, (state, action) => {...callback...}); deletePostAction
 });
 
 export default postsReducer;

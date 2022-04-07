@@ -23,9 +23,6 @@ export default function Post({ title, user, postedAt, content, userId }) {
   const [isAuthor, setIsAuthor] = useState(false);
   const dispatch = useDispatch();
 
-  // console.log(payload);
-  // console.log(userId);
-
   const handleEditButton = () => {
     setOpen(true);
   };
@@ -42,6 +39,13 @@ export default function Post({ title, user, postedAt, content, userId }) {
     setOpen(false);
   };
 
+  const serializeContent = (content) => {
+    if (content.endsWith('.') || content.endsWith('?') || content.endsWith('!')) {
+      return content;
+    }
+    return content + '.';
+  }
+  
   useEffect(() => {
     if (payload.user.id === userId) {
       setIsAuthor(true);
@@ -54,7 +58,7 @@ export default function Post({ title, user, postedAt, content, userId }) {
       <Card>
         <CardHeader
           title={
-            <Typography color="primary.contrastText" align="left" variant="h6" sx={{ px:'1em' }}>
+            <Typography color="primary.contrastText" align="left" variant="h6" sx={{ px:'.6em' }}>
               {title}
             </Typography>
           }
@@ -102,12 +106,8 @@ export default function Post({ title, user, postedAt, content, userId }) {
           </Grid>
         </Grid>
 
-        <Typography align="justify" paragraph py='1em' px="2em">
-          {content} Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-          Molestiae, maiores? Natus ullam aperiam tempore ipsam, maiores
-          expedita harum quasi facilis doloribus ipsa ut praesentium eos illum,
-          vitae perspiciatis. Optio, ratione.
-          {/* TODO: delete lorem text */}
+        <Typography align="justify" paragraph py='1em' px="1.9em">
+          {serializeContent(content)}
         </Typography>
       </Card>
     </Container>
