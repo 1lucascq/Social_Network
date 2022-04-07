@@ -13,7 +13,7 @@ export default function Inputs({name, label, value, handleFunction}) {
       value={value}
       onChange={(e) => handleFunction(e.target.value)}
       required
-   />
+    />
   );
 }
 

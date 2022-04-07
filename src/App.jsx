@@ -13,7 +13,7 @@ function App() {
         xs: 0,
         sm: 600,
         md: 900,
-        custom: 1166,
+        custom: 1153,
         lg: 1200
       }
     },
