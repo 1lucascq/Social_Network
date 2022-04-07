@@ -34,29 +34,6 @@ export default function DeleteModal({postedAt}) {
     setOpenDeleteModal(false);
   };
 
-  // const [disabled, setDisabled] = useState(true);
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   if (title && content) {
-  //     setDisabled(false);
-  //   } else {
-  //     setDisabled(true);
-  //   }
-  // }, [title, content]);
-
-  // const handleButton = () => {
-  //   dispatch(
-  //     editPostAction({
-  //         title,
-  //         content,
-  //         postedAt: postData.postedAt,
-  //     })
-  //   );
-  //   setTitle('');
-  //   setContent('');
-  // };
-
   return (
     <Box>
       <IconButton
@@ -99,42 +76,6 @@ export default function DeleteModal({postedAt}) {
   );
 }
 
-// DeleteModal.propTypes = {
-//   handleButtons: PropTypes.shape({
-//     handleDeleteButton: PropTypes.func,
-//     closeDeleteModal: PropTypes.func,
-//   }).isRequired,
-// };
-
 DeleteModal.propTypes = {
   postedAt: PropTypes.number.isRequired,
 };
-
-// return (
-//   <Dialog
-//     open={openDeleteModal}
-//     onClose={closeDeleteModal}
-//     fullWidth
-//     maxWidth="sm"
-//     // sx={{ position:'absolute', margin:'auto', heifght:'80em' }}
-//   >
-//     <DialogContent>
-//       <DialogContentText align="left" variant="h6">
-//         Are you sure you want to delete this item?
-//       </DialogContentText>
-//       {/* <DeleteModal handleButtons={{ handleDeleteButton, closeDeleteModal }} /> */}
-//     </DialogContent>
-//         <Buttons
-//           disabled={false}
-//           text="Cancel"
-//           handleFunction={closeDeleteModal}
-//         />
-
-//         <Buttons
-//           disabled={false}
-//           text="Ok"
-//           handleFunction={handleDeleteButton}
-//         />
-//   </Dialog>
-// );
-// }
