@@ -10,11 +10,12 @@ export default function PostSection() {
       {payload.posts.map(({ post, user }, i) => {
         return (
           <Post 
-          key={user.id + i}
-          title={post.title}
-          user={`@${user.username}`}
-          postedAt={post.postedAt}
-          content={post.content}
+            key={user.id + i}
+            userId={user.id}
+            title={post.title}
+            user={`@${user.username}`}
+            postedAt={post.postedAt}
+            content={post.content}
           />
         )
       })}    
