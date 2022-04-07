@@ -29,7 +29,7 @@ export const getElapsedTime = (postedAt, end = Date.now()) => {
 };
 
 
-
+// TODO: delete console.log
 // export const getElapsedTime = (start, end = Date.now()) => {
 //   const elapsedTimeInSeconds = Math.floor((end - (new Date(start).getTime())) / 1000);
 

@@ -1,23 +1,22 @@
 import {
   Card,
-  CardHeader,
-  Container,
-  FormControl, Typography
+  CardHeader, FormControl, Typography
 } from "@mui/material";
+import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { newPostAction, signUpAction } from "../../actions";
+import { editPostAction, signUpAction } from "../../actions";
 import Buttons from "../general/Buttons";
 import Inputs from "../general/Inputs";
 import LargeInputs from "../general/LargeInputs";
 
-export default function NewPost() {
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+export default function EditModal({postData}) { 
+  const [title, setTitle] = useState(postData.title);
+  const [content, setContent] = useState(postData.content);
   const [disabled, setDisabled] = useState(true);
   const dispatch = useDispatch();
   const { payload } = useSelector(signUpAction);
-
+  
   useEffect(() => {
     if (title && content) {
       setDisabled(false);
@@ -26,18 +25,16 @@ export default function NewPost() {
     }
   }, [title, content]);
 
+  // console.log(postData)
+  console.log(payload.posts)
+  // console.log('esse post é: ', payload.posts.find(({post}) => post.postedAt === postData.postedAt))
+
   const handleButton = () => {
     dispatch(
-      newPostAction({
-        user: {
-          username: payload.user.username,
-          id: payload.user.id,
-        },
-        post: {
+      editPostAction({
           title,
           content,
-          postedAt: new Date().getTime(),
-        },
+          postedAt: postData.postedAt,
       })
     );
     setTitle('');
@@ -45,12 +42,11 @@ export default function NewPost() {
   };
 
   return (
-    <Container>
-      <Card sx={{ p:'1em' }}>
+      <Card>
         <CardHeader
           title={
             <Typography align="left" variant="h6">
-              What's on your mind?
+              Edit Post
             </Typography>
           }
         />
@@ -80,6 +76,13 @@ export default function NewPost() {
           />
         </FormControl>
       </Card>
-    </Container>
   );
+}
+
+EditModal.propTypes = {
+  postData: PropTypes.shape({
+    content: PropTypes.string,
+    title: PropTypes.string,
+    postedAt: PropTypes.number
+  }).isRequired
 }

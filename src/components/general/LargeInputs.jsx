@@ -13,6 +13,7 @@ export default function LargeInput({name, label, value, handleFunction}) {
       value={value}
       onChange={(e) => handleFunction(e.target.value)}
       sx={{ my: '1em' }}
+      required
     />  
   )
 }
