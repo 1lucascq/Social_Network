@@ -5,9 +5,18 @@ import Post from './Post'
 
 export default function PostSection() {
   const { payload } = useSelector(newPostAction);
+  
+  const sortPosts = () => {
+    if (payload.posts.length > 1) {
+      return payload.posts.slice().sort((a, b) => b.post.postedAt - a.post.postedAt)
+    }
+    return payload.posts;
+  }
+  const sortedPosts = sortPosts();
+
   return (
     <>
-      {payload.posts.map(({ post, user }, i) => {
+      {sortedPosts.map(({ post, user }, i) => {
         return (
           <Post 
             key={user.id + i}
