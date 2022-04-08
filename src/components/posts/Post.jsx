@@ -16,7 +16,7 @@ export default function Post({ title, user, postedAt, content, userId }) {
   const [isAuthor, setIsAuthor] = useState(false);
 
   const serializeContent = (content) => {
-    if (content.endsWith('.') || content.endsWith('?') || content.endsWith('!')) {
+    if (['?', '!', '.'].includes(content.charAt(content.length - 1))) {
       return content;
     }
     return content + '.';
@@ -32,6 +32,7 @@ export default function Post({ title, user, postedAt, content, userId }) {
   return (
     <Container sx={{ my: "3em" }}>
       <Card>
+        
         <CardHeader
           title={
             <Typography color="primary.contrastText" align="left" variant="h6" sx={{ px:'.6em' }}>
@@ -68,6 +69,7 @@ export default function Post({ title, user, postedAt, content, userId }) {
         <Typography align="justify" paragraph py='1em' px="1.9em">
           {serializeContent(content)}
         </Typography>
+
       </Card>
     </Container>
   );
