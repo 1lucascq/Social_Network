@@ -16,7 +16,7 @@ export default function Post({ title, user, postedAt, content, userId }) {
   const [isAuthor, setIsAuthor] = useState(false);
 
   const serializeContent = (content) => {
-    if (['?', '!', '.'].includes(content.charAt(content.length - 1))) {
+    if (['?', '!', '.', ']'].includes(content.charAt(content.length - 1))) {
       return content;
     }
     return content + '.';
