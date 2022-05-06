@@ -12,7 +12,7 @@ const RELATIVE_FORMATTER = new Intl.RelativeTimeFormat('en-uk', {
 });
 
 export const getElapsedTime = (postedAt, end = Date.now()) => {
-  
+
   const start = new Date(postedAt);
   const elapsedTimeInSeconds = Math.floor((end - start.getTime()) / 1000);
 

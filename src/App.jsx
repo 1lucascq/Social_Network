@@ -5,6 +5,8 @@ import { Route, Routes } from "react-router-dom";
 import Main from "./pages/Main";
 import { ThemeProvider } from "@emotion/react";
 import { createTheme, CssBaseline } from "@mui/material";
+import Joke from './pages/JustAJoke';
+
 
 function App() {
   const theme = createTheme({
@@ -35,6 +37,7 @@ function App() {
       <Routes>
         <Route index element={<SignUp />} />
         <Route path="/main" element={<Main />} />
+        <Route path="/error" element={<Joke />} />
       </Routes>
 
     </ThemeProvider>
