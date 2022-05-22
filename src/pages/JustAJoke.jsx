@@ -15,7 +15,7 @@ class JustAJoke extends Component {
         <br />
         <button
           type="button"
-          onClick={ () => alert('"Uau! Você acertou, PEGA LÁ A CERVEJA!"') }
+          onClick={ () => alert('"Oloko bixo, você acertou, PEGA LÁ A CERVEJA!"') }
         >
           CHUTAR
         </button>
