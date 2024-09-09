@@ -9,7 +9,6 @@ import { signUpAction } from "../../src/actions";
 function Main() {
 	const navigate = useNavigate();
 	const { payload } = useSelector(signUpAction);
-	console.log(payload)
 
 	React.useEffect(() => {
 		const userExists = !!payload.user.username
